@@ -1,0 +1,13 @@
+.item-box:checked ~ .item-label {
+    text-decoration: line-through;
+    color: #9f9fa5;
+}
+
+.item-box:checked ~ .item-label ~ .task-attributes {
+    color: #9f9fa5
+}
+
+.item-box:checked ~ .item-label ~ .task-attributes .points {
+    color: green;
+    font-weight: bold;
+}
