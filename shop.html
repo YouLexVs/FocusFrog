@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="manifest" href="/manifest.json">
-    <script src="script/app.js"></script>
+    <script type="module" src="/script/app.js"></script>
+    <script type="module" src="/script/db.js"></script>
+    <script type="module" src="/script/shop.js"></script>
     <link rel="stylesheet" href="/style/style.css"  />
     <link rel="stylesheet" href="/style/history.css"  />
     <link rel="stylesheet" href="/style/shop.css"  />
@@ -16,25 +18,50 @@
 
     <div class="app-container">
         <div class="header-container-btn">
-            <a href="/index.html" class="back-button"><</a>
-                <div class="header">Sklep</div>
-            </div>
+            <a href="/index.html" class="back-button"><img src="/assets/chevron-left-solid.svg" /></a>
+            <div class="header">Sklep</div>
+            <div class="points-count">🐸<span id="points-count">0</span></div>
+        </div>
         <div class="app-content">           
             <div class="shop-container">
                 <div class="shop-item">
-                    <div class="shop-img"><img src='https://media.istockphoto.com/id/1809443302/pl/wektor/ikona-z%C5%82otej-korony-3d-na-bia%C5%82ym-tle.jpg?s=1024x1024&w=is&k=20&c=Srf69tc5vGC6qbOVVsvXROE8x1BmDKpTO8Zwmh1ZkqQ=' /></div>
+                    <div class="shop-img"><img src='/assets/tiktok.png' /></div>
                     <div class="shop-label">15 minut TikToka</div>
                     <div class="buy-attributes">
-                        <div class="cost">15</div>
+                        <div class="cost">40</div>
+                        <button class="buy-btn">buy</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <div class="shop-img"><img src='/assets/gaming.png' /></div>
+                    <div class="shop-label">Godzina gamingu</div>
+                    <div class="buy-attributes">
+                        <div class="cost">180</div>
+                        <button class="buy-btn">buy</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <div class="shop-img"><img src='/assets/sweets.png' /></div>
+                    <div class="shop-label">Coś słodkiego</div>
+                    <div class="buy-attributes">
+                        <div class="cost">25</div>
+                        <button class="buy-btn">buy</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <div class="shop-img"><img src='/assets/series.png' /></div>
+                    <div class="shop-label">Odcinek serialu</div>
+                    <div class="buy-attributes">
+                        <div class="cost">100</div>
                         <button class="buy-btn">buy</button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="navigation-container">
-            <div class="nav-button"><a href="/index.html">G</a></div>
-            <div class="nav-button"><a href="/history.html">H</a></div>
-            <div class="nav-button active"><a>S</a></div>
+            <div class="nav-button"><a href="/index.html"><img src="/assets/house-solid.svg" /></a></div>
+            <div class="nav-button"><a href="/history.html"><img src="/assets/calendar-days-solid.svg" /></a></div>
+            <div class="nav-button active"><a><img src="/assets/cart-shopping-solid.svg" /></a></div>
         </div>
     </div>
 

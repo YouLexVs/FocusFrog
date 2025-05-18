@@ -1,3 +1,5 @@
+import { saveTasksToDB, getPoints, getTasksForToday, markTaskDone } from "./db.js";
+
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/service-worker.js')
@@ -21,8 +23,19 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const submitBtn = document.getElementById('decompose-tasks');
+    const points = await getPoints();
+
+    const pointsCount = document.getElementById('points-count');
+    if (pointsCount) pointsCount.textContent = `${points}`;
+
+    const todayTasks = await getTasksForToday();
+    if(todayTasks && todayTasks.tasks && todayTasks.tasks.length > 0) {
+      document.getElementsByClassName('empty-tasks')[0].classList.add('hidden');
+      showTasks(todayTasks.tasks);
+    }
+    
 
     submitBtn.addEventListener("click", (e) => {
         e.preventDefault();
@@ -51,19 +64,27 @@ const handleSubmit = async (input) => {
     }
 
     const json = await response.json();
+    const today = new Date().toISOString().split("T")[0];
+    const jsonWithDone = json.map(task => ({
+      ...task,
+      done: false 
+    }));
+    await saveTasksToDB(today, jsonWithDone);
     document.getElementsByClassName('tasks-loading')[0].classList.add('hidden');
-    showTasks(json);
+    showTasks(jsonWithDone);
+
 }
 
 
 const showTasks = (tasks) => {
     const taskList = document.getElementsByClassName("task-list")[0];
-    const date = new Date().toISOString();
+    const date = new Date().toISOString().split('T')[0]; 
 
     tasks.forEach((element, index) => {
         const div = document.createElement("div");
         const elementId = `${date}_${index}`;
         const points = element.priority * element.difficulty;
+        const isDone = element.done ? 'checked' : '';
 
         let priority;
 
@@ -86,7 +107,7 @@ const showTasks = (tasks) => {
         div.setAttribute('data-id', elementId);
 
         div.innerHTML = `<div class="checkbox-group">
-                            <label><input type="checkbox" class="item-box" data-id="${elementId}" />${element.title}<label>
+                            <label><input type="checkbox" class="item-box" data-id="${elementId}" ${isDone} />${element.title}<label>
                         </div>
                         <div class="task-attributes">
                             <div class="priority">${priority}</div>
@@ -96,8 +117,12 @@ const showTasks = (tasks) => {
 
         const checkbox = div.querySelector('input[type="checkbox"]');
 
-        checkbox.addEventListener("change", () => {
-            console.log(element);
+        checkbox.addEventListener("change", async () => {
+            await markTaskDone(date, elementId, element.priority, element.difficulty);
+
+            const updatedPoints = await getPoints();
+            const pointsCount = document.getElementById('points-count');
+            if (pointsCount) pointsCount.textContent = `${updatedPoints}`;
         })
 
         taskList.appendChild(div);

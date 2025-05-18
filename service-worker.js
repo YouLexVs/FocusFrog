@@ -4,14 +4,23 @@ const ASSETS_TO_CACHE = [
   '/index.html',
   '/history.html',
   '/shop.html',
+  '/icons/icon-192.png',
+  '/icons/icon-512.png',
   '/assets/frog.png',
   '/assets/logo-trans.png',
-  '/assets/logo/png',
+  '/assets/logo.png',
+  '/assets/gaming.png',
+  '/assets/series.png',
+  '/assets/sweets.png',
+  '/assets/tiktok.png',
+  '/assets/house-solid.svg',
+  '/assets/cart-shopping-solid.svg',
+  '/assets/calendar-days-solid.svg',
+  '/assets/chevron-left-solid.svg',
   '/script/app.js',
   '/script/db.js',
   '/style/style.css',
   '/style/shop.css',
-  '/style/history.css'
 ];
 
 self.addEventListener('install', (event) => {

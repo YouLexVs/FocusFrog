@@ -1,4 +1,4 @@
-import { openDB } from 'idb';
+import { openDB } from 'https://unpkg.com/idb?module';
 
 const DB_NAME = 'FocusFrogDB';
 const DB_VERSION = 1;
@@ -30,9 +30,9 @@ export const getTasksForToday = async () => {
 export const getHistory = async () => {
   const db = await initDB();
   const allKeys = await db.getAllKeys('tasks');
-  const today = new Date().toISOString().split('T')[0];
-  const pastKeys = allKeys.filter(k => k !== today);
-  const history = await Promise.all(pastKeys.map(k => db.get('tasks', k)));
+  // const today = new Date().toISOString().split('T')[0];
+  //const pastKeys = allKeys.filter(k => k !== today);
+  const history = await Promise.all(allKeys.map(k => db.get('tasks', k)));
   return history;
 };
 

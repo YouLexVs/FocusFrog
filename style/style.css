@@ -33,6 +33,12 @@ body {
     margin-bottom: 1rem;
 }
 
+.header-logo-text {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .app-content {
     margin-bottom: .5rem;
 }
@@ -46,6 +52,11 @@ body {
     height: fit-content;
     align-items: center;
     gap: 1rem;   
+    justify-content: space-between;
+}
+
+.points-count {
+    margin-right: 1rem;
 }
 
 .header-logo {
@@ -116,6 +127,20 @@ body {
     border-radius: .3rem;
 }
 
+.item-box:checked ~ .item-label {
+    text-decoration: line-through;
+    color: #9f9fa5;
+}
+
+.item-box:checked ~ .item-label ~ .task-attributes {
+    color: #9f9fa5
+}
+
+.item-box:checked ~ .item-label ~ .task-attributes .points {
+    color: green;
+    font-weight: bold;
+}
+
 #decompose-tasks {
     border-radius: 1rem;
     outline: none;
@@ -146,13 +171,12 @@ body {
 .header-container-btn {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
 .back-button {
-    position: absolute;
-    left: 0.5rem;
+    margin-left: .5rem;
     text-decoration: none;
     color: #000000;
     padding: .5rem;

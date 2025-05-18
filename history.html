@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="manifest" href="/manifest.json">
-    <script src="script/app.js"></script>
+    <script type="module" src="/script/db.js"></script>
+    <script type="module" src="/script/history.js"></script>
     <link rel="stylesheet" href="/style/style.css"  />
-    <link rel="stylesheet" href="/style/history.css"  />
 </head>
 <body>
    <div class="container">
@@ -15,59 +15,25 @@
 
     <div class="app-container">
         <div class="header-container-btn">
-            <a href="/index.html" class="back-button"><</a>
-                <div class="header">Historia zadań</div>
-            </div>
+            <a href="/index.html" class="back-button"><img src="/assets/chevron-left-solid.svg" /></a>
+            <div class="header">Historia zadań</div>
+            <div class="points-count">🐸<span id="points-count">0</span></div>
+         </div>
         <div class="app-content">           
             <div class="tasks-container">
                 <div class="task-list">
-                    <div class="task-item">
-                        <input type="checkbox" class="item-box" disabled checked  />
-                        <label class="item-label">Rozpocząc tworzyć zadanie</label>
-                        <div class="task-attributes">
-                            <div class="priority">Ważne</div>
-                            <div class="points">+23</div>
-                        </div>
+                    <div class="empty-tasks">
+                    <div class="empty-tasks-label">
+                        Brak zadań na dziś
                     </div>
-                    <div class="task-item">
-                        <input type="checkbox" />Rozpocząc tworzyć zadanie
-                        <label></label>
-                        <div class="task-attributes">
-                            <div class="priority">Ważne</div>
-                            <div>+23</div>
-                        </div>
-                    </div>
-                    <div class="task-item">
-                        <input type="checkbox" />Rozpocząc tworzyć zadanie
-                        <label></label>
-                        <div class="task-attributes">
-                            <div class="priority">Ważne</div>
-                            <div>+23</div>
-                        </div>
-                    </div>
-                    <div class="task-item">
-                        <input type="checkbox" />Rozpocząc tworzyć zadanie
-                        <label></label>
-                        <div class="task-attributes">
-                            <div class="priority">Ważne</div>
-                            <div>+23</div>
-                        </div>
-                    </div>
-                    <div class="task-item">
-                        <input type="checkbox" />Rozpocząc tworzyć zadanie
-                        <label></label>
-                        <div class="task-attributes">
-                            <div class="priority">Ważne</div>
-                            <div>+23</div>
-                        </div>
-                    </div>
+                </div>
                 </div>
             </div>
         </div>
         <div class="navigation-container">
-            <div class="nav-button"><a href="/index.html">G</a></div>
-            <div class="nav-button active"><a>H</a></div>
-            <div class="nav-button"><a href="/shop.html">S</a></div>
+            <div class="nav-button"><a href="/index.html"><img src="/assets/house-solid.svg" /></a></div>
+            <div class="nav-button active"><a><img src="/assets/calendar-days-solid.svg" /></a></div>
+            <div class="nav-button"><a href="/shop.html"><img src="/assets/cart-shopping-solid.svg" /></a></div>
         </div>
     </div>
 
