@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="manifest" href="/manifest.json">
+    <script type="module" src="/script/app.js"></script>
+    <script type="module" src="/script/db.js"></script>
+    <script type="module" src="/script/shop.js"></script>
+    <link rel="stylesheet" href="/style/style.css"  />
+    <link rel="stylesheet" href="/style/history.css"  />
+    <link rel="stylesheet" href="/style/shop.css"  />
+</head>
+<body>
+   <div class="container">
+
+
+    <div class="app-container">
+        <div class="header-container-btn">
+            <a href="/index.html" class="back-button"><img src="/assets/chevron-left-solid.svg" /></a>
+            <div class="header">Sklep</div>
+            <div class="points-count">🐸<span id="points-count">0</span></div>
+        </div>
+        <div class="app-content">           
+            <div class="shop-container">
+                <div class="shop-item">
+                    <div class="shop-img"><img src='/assets/tiktok.png' /></div>
+                    <div class="shop-label">15 minut TikToka</div>
+                    <div class="buy-attributes">
+                        <div class="cost">40</div>
+                        <button class="buy-btn">buy</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <div class="shop-img"><img src='/assets/gaming.png' /></div>
+                    <div class="shop-label">Godzina gamingu</div>
+                    <div class="buy-attributes">
+                        <div class="cost">180</div>
+                        <button class="buy-btn">buy</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <div class="shop-img"><img src='/assets/sweets.png' /></div>
+                    <div class="shop-label">Coś słodkiego</div>
+                    <div class="buy-attributes">
+                        <div class="cost">25</div>
+                        <button class="buy-btn">buy</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <div class="shop-img"><img src='/assets/series.png' /></div>
+                    <div class="shop-label">Odcinek serialu</div>
+                    <div class="buy-attributes">
+                        <div class="cost">100</div>
+                        <button class="buy-btn">buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-container">
+            <div class="nav-button"><a href="/index.html"><img src="/assets/house-solid.svg" /></a></div>
+            <div class="nav-button"><a href="/history.html"><img src="/assets/calendar-days-solid.svg" /></a></div>
+            <div class="nav-button active"><a><img src="/assets/cart-shopping-solid.svg" /></a></div>
+        </div>
+    </div>
+
+   </div> 
+</body>
+</html>

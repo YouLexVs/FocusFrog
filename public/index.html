@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="manifest" href="/manifest.json">
+    <script type="module" src="/script/app.js"></script>
+    <script type="module" src="/script/db.js"></script>
+    <link rel="stylesheet" href="/style/style.css"  />
+</head>
+<body>
+   <div class="container">
+
+
+    <div class="app-container">
+        <div class="header-container">
+            <div class="header-logo-text">
+            <img class="header-logo" src="/assets/frog.png" />
+            <div class="header">Focus Frog</div>     
+            </div>
+            <div class="points-count">🐸<span id="points-count">0</span></div>
+        </div>
+        <div class="app-content">           
+            <div class="input-container">
+                    <textarea placeholder="Co dzisiaj będziesz robić" type="text" id="task-description" ></textarea>
+                <button id="decompose-tasks">Przygotuj listę zadań</button>
+            </div>
+            <div class="tasks-container">
+                <div class="task-list">                   
+                </div>
+                <div class="empty-tasks">
+                    <div class="empty-tasks-label">
+                        Brak zadań na dziś
+                    </div>
+                </div>
+                <div class="tasks-loading hidden">
+                    <div class="loading-label">
+                        Ładowanie...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-container">
+            <div class="nav-button active"><a><img src="/assets/house-solid.svg" /></a></div>
+            <div class="nav-button"><a href="/history.html"><img src="/assets/calendar-days-solid.svg" /></a></div>
+            <div class="nav-button"><a href="/shop.html"><img src="/assets/cart-shopping-solid.svg" /></a></div>
+        </div>
+    </div>
+
+   </div> 
+</body>
+</html>
